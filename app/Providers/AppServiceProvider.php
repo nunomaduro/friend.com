@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // if /tmp/database.sqlite does not exists, create an empty database and migrate
-        if (!file_exists(database_path('database.sqlite'))) {
-            touch(database_path('database.sqlite'));
+        if (! file_exists('/tmp/database.sqlite')) {
+            file_put_contents('/tmp/database.sqlite', '');
 
             Artisan::call('migrate');
         }
