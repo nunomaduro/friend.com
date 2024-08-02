@@ -24,7 +24,9 @@ class AppServiceProvider extends ServiceProvider
         if (! file_exists('/tmp/database.sqlite')) {
             file_put_contents('/tmp/database.sqlite', '');
 
-            Artisan::call('migrate');
+            Artisan::call('migrate', [
+                '--force' => true,
+            ]);
         }
     }
 }
