@@ -6,7 +6,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Database Connection Name
+    | Default Database Connection Named wqdqw 
     |--------------------------------------------------------------------------
     |
     | Here you may specify which of the database connections below you wish
