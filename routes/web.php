@@ -8,18 +8,14 @@ Route::get('/', function () {
 
 Route::get('/dispatch', function () {
     dispatch(function () {
-        $counter = Cache::get('counter', 0);
-
-        $counter++;
-
-        Cache::put('counter', $counter);
+        \App\Models\User::factory()->create();
     });
 
     return 'done';
 });
 
 Route::get('/result', function () {
-    return Cache::get('counter', 0);
+    return \App\Models\User::count();
 });
 
 Route::middleware([
