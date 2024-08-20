@@ -6,6 +6,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dispatch', function () {
+    dispatch(function () {
+        $counter = Cache::get('counter', 0);
+
+        $counter++;
+
+        Cache::put('counter', $counter);
+    });
+});
+
+Route::get('/result', function () {
+    return Cache::get('counter', 0);
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
