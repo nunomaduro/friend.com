@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register any application services.wqdqwd
      */
     public function register(): void
     {
