@@ -13,7 +13,9 @@ Route::get('/dispatch', function () {
         $counter++;
 
         Cache::put('counter', $counter);
-    })->onQueue('database');
+    });
+
+    return 'done';
 });
 
 Route::get('/result', function () {
